@@ -1,0 +1,17 @@
+div#banner
+    img#gs_full_logo(src="https://www2.gamespirit.fr/img/1608989485.svg", alt="gs_full_logo")
+
+    div#separator
+
+    - var title = "configuration"
+    button#menu_button(hx-get="/config", hx-target="#content") #{title.toUpperCase()}
+
+    - var title = "tournoi"
+    button#menu_button(hx-get="/tournament", hx-target="#content") #{title.toUpperCase()}
+
+    - var title = "scores"
+    button#menu_button(hx-get="/scores", hx-target="#content") #{title.toUpperCase()}
+
+    div#spacer
+
+    p#version #{version}
