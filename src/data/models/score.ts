@@ -1,21 +1,20 @@
-import { BelongsTo, Column, DataType, ForeignKey, Model, Table } from "sequelize-typescript";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import Player from "./player";
 
-@Table
-export default class Score extends Model {
-    @Column(DataType.NUMBER)
+@Entity()
+export default class Score {
+    @PrimaryGeneratedColumn()
+    id!: number
+
+    @Column()
     round!: number
 
-    @Column(DataType.NUMBER)
+    @Column()
     rank!: number
 
-    @Column(DataType.NUMBER)
+    @Column()
     challenges!: number
 
-    @ForeignKey(() => Player)
-    @Column(DataType.NUMBER)
-    playerId!: number
-
-    @BelongsTo(() => Player)
+    @ManyToOne(() => Player, (player) => player.scores)
     player!: Player
 }

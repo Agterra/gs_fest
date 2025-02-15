@@ -1,12 +1,10 @@
 import bodyParser from 'body-parser'
 import Express from 'express'
-import { configRouter } from './routes/config'
-import { sequelize } from './data/database'
-import { tournamentRouter } from './routes/tournament'
-import { scoresRouter } from './routes/scores'
+import { Database } from './data/database'
+import { apiRouter } from './routes/back'
+import { frontRouter } from './routes/front'
 
 const app = Express()
-const _ = sequelize
 
 app.set('views', __dirname + '/views')
 app.set('view engine', 'pug')
@@ -21,14 +19,13 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use('/config', configRouter)
-app.use('/tournament', tournamentRouter)
-app.use('/scores', scoresRouter)
+app.use('/api', apiRouter)
+app.use('/', frontRouter)
 
-app.get('/', (req, res) => {
-    res.render('index', { version: process.env.npm_package_version })
-})
-
-app.listen(3000, () => {
+app.listen(3000, async () => {
     console.log("App running on port 3000")
+    await Database.initialize()
+        .then(() => {
+            console.log("Database initialized")
+        })
 })
