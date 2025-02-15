@@ -1,6 +1,9 @@
 :root {
     --primary: #14a7d0;
     --background: rgb(239 246 255);
+    font-family: sans-serif;
+    --semibold: 600;
+    --bold: 700;
 }
 
 body,
@@ -24,16 +27,17 @@ html {
     gap: 1.5rem;
     padding: 2.5rem;
     background-color: var(--primary);
-    max-width: 15rem;
+    max-width: 10rem;
 }
 
 #gs_full_logo {
-    max-width: 15rem;
+    max-width: 10rem;
 }
 
 #banner #separator {
     height: 0.25rem;
     width: 10rem;
+    min-height: 0.25rem;
     background-color: white;
 }
 
@@ -44,7 +48,7 @@ html {
     height: 2.5rem;
     border: 0;
     background-color: initial;
-    font-weight: 600;
+    font-weight: var(--semibold);
     font-size: 100%;
     text-align: left;
     padding: .5rem;
@@ -66,4 +70,80 @@ html {
 
 #content {
     flex: 1;
+}
+
+#config {
+    height: 100%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: start;
+}
+
+#config #title {
+    font-weight: var(--bold);
+    text-align: center;
+}
+
+#config #subtitle {
+    font-weight: var(--bold);
+    text-align: center;
+}
+
+#config #start_button {
+    background-color: var(--primary);
+    color: white;
+    font-weight: var(--semibold);
+    text-align: center;
+    padding: .5rem;
+    border-radius: .25rem;
+    background-image: none;
+    margin: 0;
+    border: 0;
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.07);
+}
+
+#config #start_button:disabled {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#config #start_button:hover:enabled {
+    background-color: white;
+    color: var(--primary);
+}
+
+#config #players {
+    padding: 2rem;
+    border-spacing: 0;
+    border: 0.1rem solid black;
+    background-color: white;
+    border-radius: 0.3rem;
+}
+
+#config #players #table {
+    border-spacing: 0;
+}
+
+#config #players #table td {
+    padding: 0.5rem;
+}
+
+#config #players #table button {
+    background-color: red;
+    background-image: none;
+    border: 0;
+}
+
+#config #players #table #head {
+    font-weight: 500;
+    font-size: medium;
+}
+
+#config #players #table th {
+    text-align: left;
+    border-bottom: 0.12rem solid black;
+    padding: 0 1rem 0.5rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
 }

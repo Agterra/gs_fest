@@ -4,8 +4,10 @@ import GameTable from "./models/table";
 import Score from "./models/score";
 
 export const sequelize = new Sequelize({
+    database: 'commanderfest',
     dialect: 'sqlite',
     repositoryMode: true,
+    storage: 'cmdrfest.sqlite',
     models: [
         Player,
         GameTable,
