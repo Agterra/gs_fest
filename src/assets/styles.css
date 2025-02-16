@@ -40,8 +40,8 @@ button:hover:enabled {
 }
 
 .reverse_button:hover:enabled {
-    background-color: white;
-    color: var(--primary);
+    background-color: var(--primary);
+    color: white;
 }
 
 
