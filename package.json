@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/index.ts"
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc && cp -r ./src/assets ./dist && cp -r ./src/views ./dist"
   },
   "author": "Louis Le Brun",
   "license": "ISC",
