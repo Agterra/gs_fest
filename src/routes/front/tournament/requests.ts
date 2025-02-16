@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
 
 export const getTournamentPage = (req: Request, res: Response) => {
-    res.render('_tournament.pug')
+    res.render('tournament/_index.pug')
 }

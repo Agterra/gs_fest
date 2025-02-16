@@ -1,3 +1,4 @@
+/* VARIABLES */
 :root {
     --primary: #14a7d0;
     --background: rgb(239 246 255);
@@ -6,93 +7,8 @@
     --bold: 700;
 }
 
-body,
-html {
-    height: 100%;
-    margin: 0;
-    background-color: var(--background);
-}
-
-#main {
-    height: 100%;
-    display: flex;
-}
-
-#banner {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 2.5rem;
-    background-color: var(--primary);
-    max-width: 10rem;
-}
-
-#gs_full_logo {
-    max-width: 10rem;
-}
-
-#banner #separator {
-    height: 0.25rem;
-    width: 10rem;
-    min-height: 0.25rem;
-    background-color: white;
-}
-
-#banner #menu_button {
-    color: white;
-    background-image: none;
-    margin: 0;
-    height: 2.5rem;
-    border: 0;
-    background-color: initial;
-    font-weight: var(--semibold);
-    font-size: 100%;
-    text-align: left;
-    padding: .5rem;
-    width: 100%;
-}
-
-#banner #menu_button:hover {
-    color: var(--primary);
-    background-color: white;
-}
-
-#banner #spacer {
-    flex: 1;
-}
-
-#banner #version {
-    color: white;
-}
-
-#content {
-    flex: 1;
-}
-
-#config {
-    height: 100%;
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    justify-content: start;
-}
-
-#config #title {
-    font-weight: var(--bold);
-    text-align: center;
-}
-
-#config #subtitle {
-    font-weight: var(--bold);
-    text-align: center;
-}
-
-#config #start_button {
+/* COMMON */
+button {
     background-color: var(--primary);
     color: white;
     font-weight: var(--semibold);
@@ -105,45 +21,127 @@ html {
     box-shadow: 0 4px 3px rgba(0, 0, 0, 0.07);
 }
 
-#config #start_button:disabled {
+button:disabled {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-#config #start_button:hover:enabled {
+button:hover:enabled {
     background-color: white;
     color: var(--primary);
 }
 
-#config #players {
-    padding: 2rem;
-    border-spacing: 0;
-    border: 0.1rem solid black;
+.reverse_button {
     background-color: white;
-    border-radius: 0.3rem;
+    color: var(--primary);
 }
 
-#config #players #table {
-    border-spacing: 0;
+.reverse_button:disabled {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-#config #players #table td {
-    padding: 0.5rem;
+.reverse_button:hover:enabled {
+    background-color: white;
+    color: var(--primary);
 }
 
-#config #players #table button {
-    background-color: red;
-    background-image: none;
-    border: 0;
+
+/* PRINCIPAL */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    background-color: var(--background);
 }
 
-#config #players #table #head {
-    font-weight: 500;
-    font-size: medium;
+#content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-#config #players #table th {
-    text-align: left;
-    border-bottom: 0.12rem solid black;
-    padding: 0 1rem 0.5rem 1rem;
-    margin: 1rem 1rem 1rem 1rem;
+/* LANDING */
+#landing {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+}
+
+#landing img {
+    max-width: 25rem;
+}
+
+/* #landing button {
+    background-color: white;
+    color: var(--primary);
+}
+
+#landing button:hover {
+    background-color: lightgray;
+    color: white;
+} */
+
+/* CONFIG */
+#config {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 2.5rem;
+}
+
+#config #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+#config #tips {
+    font-size: small;
+    color: darkgray;
+    font-style: italic;
+}
+
+#config #list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    flex: 1;
+}
+
+/* HEADER */
+#header {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    max-height: 2rem;
+    padding: 1rem;
+    color: white;
+}
+
+/* #header #back_button {
+    background-color: white;
+    color: var(--primary);
+} */
+
+#header #separator {
+    height: 3rem;
+    background-color: white;
+    width: 0.2rem;
+}
+
+#header #gs_full_logo {
+    max-height: 3rem;
+}
+
+#content {
+    flex: 1;
 }

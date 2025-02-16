@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
 
 export const getScoresPage = (req: Request, res: Response) => {
-    res.render('_scores.pug')
+    res.render('scores/_index.pug')
 }
