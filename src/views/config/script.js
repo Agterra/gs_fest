@@ -1,8 +1,13 @@
-let playerList = []
+window.playerList = []
+window.tournamentName = document.getElementById("tournament_name_input").value
+
+document.getElementById("tournament_name_input").addEventListener("keypress", (event) => {
+    tournamentName = event.target.value
+})
 
 document.getElementById("player_input").addEventListener("paste", (event) => {
     event.preventDefault()
-    const players = event.clipboardData.getData("text").split('\n')
+    const players = event.clipboardData.getData("text").split('\n').filter(e => e.length > 0)
     playerList = players
     displayPlayerList()
 })

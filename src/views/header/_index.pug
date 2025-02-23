@@ -1,4 +1,4 @@
 div#header
-    button#back_button.reverse_button Retour
+    button#back_button.reverse_button(hx-get=back, hx-target="#content") Retour
     h1#title #{title}
     img#gs_full_logo(src="https://www2.gamespirit.fr/img/1608989485.svg", alt="gs_full_logo")

@@ -1,13 +1,15 @@
 - var title = "Setup"
+- var back = "/"
+- var currentDate = (new Date()).toLocaleDateString("fr-FR")
 include ../header/_index.pug
 #config
     #form
         label(for="tournament_name") Nom du tournoi:
-        input#tournament_name_input(type="text", name="tournament_name", value="Tournoi du " + Date()) 
+        input#tournament_name_input(type="text", name="tournament_name", value="Tournoi du " + currentDate) 
         label(for="player_list") Liste des joueurs.euses: 
         input#player_input(type="text", name="player_input", placeholder="Jean-Michel", oninput="playerListUpdate(event)")
         p#tips <strong>Astuce:</strong> vous pouvez copier/coller une colonne excel directement !
-        button#submit Tout le monde est là :D
+        button#submit(hx-post="/api/tournament/create", hx-vals="js:{ players: playerList, name: tournamentName }") Tout le monde est là :D
 
     #list
         h2 Liste des joueurs.euses

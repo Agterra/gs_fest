@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { configBackRouter } from "./config";
+import { tournamentBackRouter } from "./tournament";
 
 export const apiRouter = Router()
 
-apiRouter.use('/config', configBackRouter)
+apiRouter.use('/tournament', tournamentBackRouter)
